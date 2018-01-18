@@ -40,7 +40,7 @@ get '/feed.xml' do
   endpoint = 'https://app.rakuten.co.jp/services/api/Travel/VacantHotelSearch/20170426'
   params = {
     applicationId: ENV['APPLICATION_ID'],
-    affiliateId: ENV['AFFILIATE_ID'],
+    affiliateId: ENV['AFFILIATE_ID'] || '1628deb0.f63eb90f.1628deb1.0add7980',
     format: 'json',
     latitude: (latitude * 3600).round(2),
     longitude: (longitude * 3600).round(2),

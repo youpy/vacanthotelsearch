@@ -1,0 +1,15 @@
+{
+  "name": "Vacant Hotel Search",
+  "description": "A ruby/sinatra app for searching vacant room using Rakuten Web Service API",
+  "repository": "https://github.com/youpy/vacanthotelsearch",
+  "keywords": ["sinatra", "ruby", "search", "hotel"],
+  "env": {
+    "APPLICATION_ID": {
+      "description": "Your Rakuten Web Service Application ID"
+    },
+    "AFFILIATE_ID": {
+      "description": "Your Rakuten Affiliate ID (optional)",
+      "required": false
+    }
+  }
+}
