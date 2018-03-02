@@ -11,8 +11,10 @@ set :cache, Dalli::Client.new(
       :expires_in => 60.day
     )
 
+set :public_folder, 'build/'
+
 get '/' do
-  markdown :index
+  send_file File.join(settings.public_folder, 'index.html')
 end
 
 get '/feed.xml' do
