@@ -19,10 +19,15 @@ get '/feed.xml' do
   content_type 'application/xml'
 
   # required parameters
-  latitude = (params['latitude'] || 43.0661415).to_f
-  longitude = (params['longitude'] || 141.3544518).to_f
-  from = params['from'] || '2018-02-08'
-  to = params['to'] || '2018-02-11'
+  latitude = params['latitude'].to_f
+  longitude = params['longitude'].to_f
+  from = params['from']
+  to = params['to']
+
+  unless latitude && longitude && from && to
+    content_type 'text/plain'
+    halt 400, 'requred parameters are missing'
+  end
 
   # optional parameters
   max_charge = (params['max_charge'] || 15000).to_i
