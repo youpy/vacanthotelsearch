@@ -136,7 +136,9 @@ class App extends Component {
                 id="textarea1"
                 className="materialize-textarea"
                 value={this.feedUrl()}
-                onClick={(event) => event.target.select()}></textarea>
+                onClick={(event) => event.target.select()}
+                readOnly
+              ></textarea>
               <label htmlFor="textarea1">URL</label>
             </div>
           </div>
