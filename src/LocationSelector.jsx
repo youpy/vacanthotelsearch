@@ -20,7 +20,10 @@ const LocationSelector = compose(
         refs.map = ref
       },
       onClick: () => (event) => {
-        refs.latLng = event.latLng;
+        refs.latLng = {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng()
+        };
         refs.map.panTo(refs.latLng);
       },
       onCenterChanged: ({ onLocationChange, radius }) => (event) => {
