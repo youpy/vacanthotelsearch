@@ -116,6 +116,13 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <div className="section arrow">
+          <div className="row">
+            <div className="col s12 center-align">
+              <p>▼</p>
+            </div>
+          </div>
+        </div>
         <div className="section">
           <h4>feed</h4>
           <div className="row">
