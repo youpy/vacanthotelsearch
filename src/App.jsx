@@ -94,7 +94,7 @@ class App extends Component {
               <input
                 id="min-charge"
                 type="number"
-                step="100"
+                step="500"
                 className="validate"
                 defaultValue={min_charge}
                 onChange={(event) => this.setState({ min_charge: event.target.value })}
