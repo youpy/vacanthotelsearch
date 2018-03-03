@@ -120,6 +120,7 @@ class App extends Component {
           <h4>feed</h4>
           <div className="row">
             <div className="col s12">
+              <p>Recommend using it with:</p>
               <ul>
                 <li>
                   <a href="https://ifttt.com/applets/E9K2refq-rss-to-ifttt-app">RSS to IFTTT App</a>
