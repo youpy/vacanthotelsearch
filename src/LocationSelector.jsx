@@ -74,7 +74,7 @@ const LocationSelector = compose(
         >
           <input
             type="text"
-            placeholder="Customized your placeholder"
+            placeholder="Search places"
             style={{
               background: '#fff',
               boxSizing: `border-box`,
