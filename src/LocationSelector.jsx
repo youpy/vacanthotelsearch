@@ -94,7 +94,7 @@ const LocationSelector = compose(
       </GoogleMap>
       <div>
         <p className="input-field range-field">
-          <input id="radius" type="range" step="10" min="100" max="3000" defaultValue={props.radius} onChange={props.onRadiusChanged} />
+          <input id="radius" type="range" step="100" min="100" max="3000" defaultValue={props.radius} onChange={props.onRadiusChanged} />
         </p>
       </div>
     </div>
