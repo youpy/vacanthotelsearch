@@ -17,6 +17,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    window.$('.modal').modal();
+  }
+
   onLocationChange(center, radius) {
     this.setState({
       center,
@@ -46,9 +50,7 @@ class App extends Component {
     return (
       <div className="container">
         <h3>
-          vacant
-          🏨
-          feed
+          vacant <span role="img" aria-labelledby="hotel">🏨</span> feed
         </h3>
         <p>
           generating vacant room feed using Rakuten Web Service API / <a href="https://github.com/youpy/vacanthotelsearch">GitHub</a>
@@ -126,14 +128,14 @@ class App extends Component {
         </div>
         <div className="section arrow">
           <div className="row">
-            <div className="col s12 center-align">
-              <p>▼</p>
+            <div className="col s12">
+              <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Generate Feed</a>
             </div>
           </div>
         </div>
-        <div className="section">
-          <div className="row">
-            <div className="input-field col s12">
+        <div id="modal1" className="modal">
+          <div className="modal-content">
+            <div className="input-field">
               <textarea
                 id="textarea1"
                 className="materialize-textarea"
@@ -143,18 +145,17 @@ class App extends Component {
               ></textarea>
               <label htmlFor="textarea1">Feed URL</label>
             </div>
+            <ul>
+              <li>
+                <a rel="noopener noreferrer"  target="_blank" href="https://ifttt.com/applets/E9K2refq-rss-to-ifttt-app">RSS to IFTTT App</a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" target="_blank" href="https://slack.com/apps/A0F81R7U7-rss">Slack RSS App</a>
+              </li>
+            </ul>
           </div>
-          <div className="row">
-            <div className="col s12">
-              <ul>
-                <li>
-                  <a href="https://ifttt.com/applets/E9K2refq-rss-to-ifttt-app">RSS to IFTTT App</a>
-                </li>
-                <li>
-                  <a href="https://slack.com/apps/A0F81R7U7-rss">Slack RSS App</a>
-                </li>
-              </ul>
-            </div>
+          <div className="modal-footer">
+            <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Done</a>
           </div>
         </div>
       </div>
