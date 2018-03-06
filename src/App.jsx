@@ -45,9 +45,15 @@ class App extends Component {
 
     return (
       <div className="container">
-        <h3>vacanthotelsearch</h3>
+        <h3>
+          vacant
+          🏨
+          feed
+        </h3>
+        <p>
+          generating vacant room feed using Rakuten Web Service API / <a href="https://github.com/youpy/vacanthotelsearch">GitHub</a>
+        </p>
         <div className="section">
-          <h5>where</h5>
           <div className="row location-selector">
             <div className="input-field col s12">
               <LocationSelector
@@ -63,56 +69,58 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-          <h5>when</h5>
           <div className="row">
-            <div className="input-field col s6">
-              <input
-                id="from-date"
-                type="date"
-                className="validate"
-                defaultValue={from_date}
-                onChange={(event) => this.setState({ from_date: event.target.value })}
-                required
-              />
+            <div className="input-field col s12 l6">
+              <div className="row">
+                <div className="input-field col s6">
+                  <input
+                    id="from-date"
+                    type="date"
+                    className="validate"
+                    defaultValue={from_date}
+                    onChange={(event) => this.setState({ from_date: event.target.value })}
+                    required
+                  />
+                </div>
+                <div className="input-field col s6">
+                  <input
+                    id="to-date"
+                    type="date"
+                    className="validate"
+                    defaultValue={to_date}
+                    onChange={(event) => this.setState({ to_date: event.target.value })}
+                    required
+                  />
+                </div>
+              </div>
             </div>
-            <div className="input-field col s6">
-              <input
-                id="to-date"
-                type="date"
-                className="validate"
-                defaultValue={to_date}
-                onChange={(event) => this.setState({ to_date: event.target.value })}
-                required
-              />
-            </div>
-          </div>
-        </div>
-        <div className="section">
-          <h5>how much</h5>
-          <div className="row">
-            <div className="input-field col s6">
-              <input
-                id="min-charge"
-                type="number"
-                step="500"
-                className="validate"
-                defaultValue={min_charge}
-                onChange={(event) => this.setState({ min_charge: event.target.value })}
-                required
-              />
-              <label htmlFor="min-charge">Min charge</label>
-            </div>
-            <div className="input-field col s6">
-              <input
-                id="max-charge"
-                type="number"
-                step="100"
-                className="validate"
-                defaultValue={max_charge}
-                onChange={(event) => this.setState({ max_charge: event.target.value })}
-                required
-              />
-              <label htmlFor="max-charge">Max charge</label>
+            <div className="input-field col s12 l6">
+              <div className="row">
+                <div className="input-field col s6">
+                  <input
+                    id="min-charge"
+                    type="number"
+                    step="500"
+                    className="validate"
+                    defaultValue={min_charge}
+                    onChange={(event) => this.setState({ min_charge: event.target.value })}
+                    required
+                  />
+                  <label htmlFor="min-charge">Min charge</label>
+                </div>
+                <div className="input-field col s6">
+                  <input
+                    id="max-charge"
+                    type="number"
+                    step="100"
+                    className="validate"
+                    defaultValue={max_charge}
+                    onChange={(event) => this.setState({ max_charge: event.target.value })}
+                    required
+                  />
+                  <label htmlFor="max-charge">Max charge</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -124,20 +132,6 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-          <h4>feed</h4>
-          <div className="row">
-            <div className="col s12">
-              <p>Recommend using it with:</p>
-              <ul>
-                <li>
-                  <a href="https://ifttt.com/applets/E9K2refq-rss-to-ifttt-app">RSS to IFTTT App</a>
-                </li>
-                <li>
-                  <a href="https://slack.com/apps/A0F81R7U7-rss">Slack RSS App</a>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div className="row">
             <div className="input-field col s12">
               <textarea
@@ -147,11 +141,19 @@ class App extends Component {
                 onClick={(event) => event.target.select()}
                 readOnly
               ></textarea>
-              <label htmlFor="textarea1">URL</label>
+              <label htmlFor="textarea1">Feed URL</label>
             </div>
           </div>
           <div className="row">
             <div className="col s12">
+              <ul>
+                <li>
+                  <a href="https://ifttt.com/applets/E9K2refq-rss-to-ifttt-app">RSS to IFTTT App</a>
+                </li>
+                <li>
+                  <a href="https://slack.com/apps/A0F81R7U7-rss">Slack RSS App</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
